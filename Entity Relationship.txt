@@ -1,0 +1,50 @@
+Tabel "Course" menyimpan informasi tentang kursus yang ditawarkan, termasuk detail seperti judul, deskripsi, biaya pendaftaran, dan instruktur yang mengajar.
+
+Tabel "User" berisi informasi tentang pengguna yang mungkin adalah siswa atau instruktur. Peran pengguna juga dapat diidentifikasi melalui kolom "role".
+
+Tabel "Enrollment" mencatat informasi tentang siswa yang mendaftar untuk kursus tertentu.
+
+Tabel "Course Content" digunakan untuk menyimpan materi pembelajaran seperti video, teks, atau bahan bacaan.
+
+Tabel "QuizAssignment" berisi pertanyaan, opsi, dan informasi lainnya untuk kuis atau tugas.
+
+Tabel "User Progress" melacak kemajuan pengguna dalam kursus dan kuis.
+
+Tabel "Submissions" mencatat jawaban yang diajukan oleh pengguna untuk kuis atau tugas.
+
+
+/ Entitas "Course":
+Atribut: course_id (PK), title, description, enrollment_fee, instructor_id (FK), created_at, updated_at.
+Relasi: Memiliki relasi one-to-many dengan "CourseContent", "Enrollment", dan "QuizAssignment".
+Relasi: Memiliki relasi many-to-one dengan "User" melalui instructor_id.
+
+/ Entitas "User":
+Atribut: user_id (PK), username, email, password, role, created_at, updated_at.
+Relasi: Memiliki relasi one-to-many dengan "Enrollment", "UserProgress", dan "Submissions".
+Relasi: Memiliki relasi one-to-many dengan "Course" sebagai instructor.
+
+/ Entitas "Enrollment":
+Atribut: enrollment_id (PK), user_id (FK), course_id (FK), enrollment_date.
+Relasi: Memiliki relasi many-to-one dengan "User" melalui user_id.
+Relasi: Memiliki relasi many-to-one dengan "Course" melalui course_id.
+
+/ Entitas "CourseContent":
+Atribut: content_id (PK), course_id (FK), content_type, content_data, sequence_order.
+Relasi: Memiliki relasi many-to-one dengan "Course" melalui course_id.
+Relasi: Memiliki relasi one-to-one dengan "QuizAssignment" jika content_type adalah kuis.
+
+/ Entitas "UserProgress":
+Atribut: progress_id (PK), user_id (FK), content_id (FK), quiz_id (FK), completed, score.
+Relasi: Memiliki relasi many-to-one dengan "User" melalui user_id.
+Relasi: Memiliki relasi many-to-one dengan "CourseContent" melalui content_id.
+Relasi: Memiliki relasi many-to-one dengan "QuizAssignment" melalui quiz_id.
+
+/ Entitas "Submissions":
+Atribut: submission_id (PK), user_id (FK), quiz_id (FK), submitted_at, answers.
+Relasi: Memiliki relasi many-to-one dengan "User" melalui user_id.
+Relasi: Memiliki relasi many-to-one dengan "QuizAssignment" melalui quiz_id.
+
+/ Entitas "QuizAssignment":
+Atribut: quiz_id (PK), content_id (FK), title, description, due_date.
+Relasi: Memiliki relasi one-to-one dengan "CourseContent" melalui content_id.
+Relasi: Memiliki relasi one-to-many dengan "UserProgress".
