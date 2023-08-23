@@ -1,0 +1,20 @@
+1. Halaman Beranda (Home Page):
+Halaman utama yang memberikan gambaran umum tentang platform dan kursus yang ditawarkan.
+
+2. Halaman Katalog Kursus (Course Catalog Page):
+Halaman yang menampilkan daftar kursus yang tersedia dengan judul, deskripsi singkat, dan gambar.
+
+3. Halaman Detail Kursus (Course Detail Page):
+Halaman yang memberikan informasi lebih rinci tentang suatu kursus, seperti deskripsi, instruktur, dan beberapa modul pembelajaran.
+
+4. Halaman Materi Kursus (Course Content Page):
+Halaman yang menampilkan materi pembelajaran dalam kursus tertentu, seperti video, teks, atau gambar.
+
+5. Halaman Ujian atau Latihan (Quiz or Practice Page):
+Halaman yang berisi ujian atau latihan sederhana untuk menguji pemahaman pengguna.
+
+6. Halaman Profil Pengguna (User Profile Page):
+Halaman yang memungkinkan pengguna melihat profil mereka, termasuk kursus yang diambil dan kemajuan pembelajaran.
+
+7. Halaman Login dan Registrasi (Login and Registration Page):
+Halaman yang memungkinkan pengguna untuk masuk ke akun mereka atau mendaftar akun baru.
