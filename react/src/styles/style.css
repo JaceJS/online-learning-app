@@ -133,8 +133,7 @@ body {
   /**
   * Login Button 
   */
-  .login-btn {
-    margin-left: 22px;
+  .login-btn {    
     background: #5fcf80;
     color: #fff;
     border-radius: 50px;

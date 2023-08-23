@@ -18,9 +18,9 @@ const AppNavbar = () => {
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </Nav>
 
-                    <Button to="/login" className="login-btn">
-                        Login
-                    </Button>
+                    <NavLink to="/login">
+                        <Button className="login-btn">Login</Button>
+                    </NavLink>
                 </Container>
             </Navbar>
         </header>
